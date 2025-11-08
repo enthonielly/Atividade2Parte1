@@ -103,7 +103,7 @@ Use o método replace(), substituindo "JavaScript" por uma string vazia.
 ````
 const novoTexto = texto.replace("JavaScript", "");
 console.log(novoTexto);
-// ✅ Saída: " é baseada em ECMA Script"
+// Saída: " é baseada em ECMA Script"
 ````
 > Dica: Se a palavra aparecer mais de uma vez e quiser remover todas, use expressão regular com o modificador g:
 > ````
@@ -116,7 +116,7 @@ Mais uma vez, usamos replace():
 ````
 const alterado = texto.replace("baseada", "tem origem");
 console.log(alterado);
-// ✅ Saída: "JavaScript é tem origem em ECMA Script"
+// Saída: "JavaScript é tem origem em ECMA Script"
 ````
 
 **Resumo Geral**
@@ -127,10 +127,58 @@ console.log(alterado);
 | Substituir "baseada" por "tem origem" | replace("baseada", "tem origem") | "JavaScript é tem origem em ECMA Script" |  |
 
 ## 4. Qual a vantagem de usar template strings (`) em vez de concatenação com + para criar strings complexas
+As template strings (também chamadas de template literals) foram introduzidas no ES6 (ECMAScript 2015) e trouxeram uma forma muito mais simples, legível e poderosa de criar strings dinâmicas em JavaScript.
 
+- **Diferença principal**
 
+Forma antiga — concatenação com +:
+````
+const nome = "Enthonielly";
+const idade = 19;
 
+const mensagem = "Olá, meu nome é " + nome + " e eu tenho " + idade + " anos.";
+console.log(mensagem);
+// "Olá, meu nome é Enthonielly e eu tenho 19 anos."
+````
+Forma moderna — template string:
+````
+const nome = "Enthonielly";
+const idade = 25;
 
+const mensagem = `Olá, meu nome é ${nome} e eu tenho ${idade} anos.`;
+console.log(mensagem);
+// "Olá, meu nome é Enthonielly e eu tenho 25 anos."
+````
+- **Vantagens das template strings**
+> **1.** Sintaxe mais limpa e legível
+>> - Evita excesso de + e aspas, tornando o código mais fácil de entender.
+>
+> **2.** Interpolação direta de variáveis e expressões
+>> - Você pode inserir variáveis e até operações:
+>> ````
+>> `Ano que vem terei ${idade + 1} anos.`
+>> ````
+>
+> **3.** Suporte a múltiplas linhas
+>> - Pode quebrar a string sem usar \n:
+>> ````
+>> const texto = `
+>> Nome: ${nome}
+>> Idade: ${idade}
+>> `;
+>> ````
+>
+> **4.** Menos erros de concatenação
+>> -Evita confusões com espaços e aspas, comuns em concatenação com +.
+>
+> **5.** Melhor manutenção
+>> -Facilita editar textos longos, especialmente em mensagens ou HTML dinâmico.
+
+Em Resumo.
+| Método | Características |
+|-----|-----|
+| Concatenação (+) | Verboso, fácil de errar com espaços/aspas |
+|Template string (``) | Simples, legível, suporta variáveis, expressões e múltiplas linhas |
 
 
 
