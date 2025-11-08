@@ -66,7 +66,8 @@ localStorage.setItem("usuario", JSON.stringify(usuario));
 // Recuperar o texto e transformá-lo de volta em objeto
 const dados = JSON.parse(localStorage.getItem("usuario"));
 
-console.log(dados.nome); // Saída: "Enthonielly"
+console.log(dados.nome);
+// Saída: "Enthonielly"
 ````
 - Analogia Simples
 >stringify() empacota o objeto para transporte;
@@ -78,8 +79,54 @@ console.log(dados.nome); // Saída: "Enthonielly"
 - **Remover a palavra "JavaScript" e gerar uma nova string;**
 - **Substituir "baseada" por "tem origem"**
 
+````
+const texto = "JavaScript é baseada em ECMA Script";
+````
 
+- Verificar se contém a palavra "Script"
 
+Você pode usar o método includes(), que retorna true ou false.
+
+````
+texto.includes("Script"); 
+// Retorna: true
+````
+> **Alternativa**
+>>texto.indexOf("Script") !== -1 (forma mais antiga)
+>>
+>>texto.match(/Script/) (usando expressão regular)
+
+- Remover a palavra "JavaScript" e gerar uma nova string
+
+Use o método replace(), substituindo "JavaScript" por uma string vazia.
+
+````
+const novoTexto = texto.replace("JavaScript", "");
+console.log(novoTexto);
+// ✅ Saída: " é baseada em ECMA Script"
+````
+> Dica: Se a palavra aparecer mais de uma vez e quiser remover todas, use expressão regular com o modificador g:
+> ````
+> texto.replace(/JavaScript/g, "");
+> ````
+
+- Substituir "baseada" por "tem origem"
+Mais uma vez, usamos replace():
+
+````
+const alterado = texto.replace("baseada", "tem origem");
+console.log(alterado);
+// ✅ Saída: "JavaScript é tem origem em ECMA Script"
+````
+
+**Resumo Geral**
+| Tarefa| Método | Exemplo | Resutado |
+|-------|-------|-------|-------|
+| Verificar se contém "Script" | includes() | texto.includes("Script") | true |
+| Remover "JavaScript" | replace("JavaScript", "") | "é baseada em ECMA Script" |  |
+| Substituir "baseada" por "tem origem" | replace("baseada", "tem origem") | "JavaScript é tem origem em ECMA Script" |  |
+
+## 4. Qual a vantagem de usar template strings (`) em vez de concatenação com + para criar strings complexas
 
 
 
