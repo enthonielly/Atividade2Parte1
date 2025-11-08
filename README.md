@@ -15,9 +15,8 @@ Este projeto tem como objetivo repnder as questões da atividade.
 ```
 {
   "nome": "Enthonielly",
-  "idade": 25,
-  "habilidades": ["Python", "JavaScript", "SQL"],
-  "ativo": true
+  "idade": 19,
+  "profissão": "Estudante"
 }
 ```
 
@@ -49,8 +48,35 @@ As funções **JSON.stringify()** e **JSON.parse()** são opostas complementares
 | **Função** | **O que faz** | **Entrada** | **Saída** |
 |--------|-----------|---------|-------|
 | JSON.stringify() | Converte um objeto JavaScript em uma string JSON | Objeto | String JSON | 
+| JSON.parse() | Converte uma string JSON em um objeto JavaScript | String JSON | Objeto |
 
+- Exemplo:
+  
+````
+// Objeto JavaScript
+const usuario = {
+  nome: "Enthonielly",
+  idade: 19,
+  profissão : "Estudante"
+};
 
+// Converter o objeto em texto JSON antes de salvar
+localStorage.setItem("usuario", JSON.stringify(usuario));
+
+// Recuperar o texto e transformá-lo de volta em objeto
+const dados = JSON.parse(localStorage.getItem("usuario"));
+
+console.log(dados.nome); // Saída: "Enthonielly"
+````
+- Analogia Simples
+>stringify() empacota o objeto para transporte;
+>
+>parse() desempacota quando ele chega.
+
+## 3. Considerando a string "JavaScript é baseada em ECMA Script", quais métodos você usaria para:
+- **Verificar se contém a palavra "Script";**
+- **Remover a palavra "JavaScript" e gerar uma nova string;**
+- **Substituir "baseada" por "tem origem"**
 
 
 
