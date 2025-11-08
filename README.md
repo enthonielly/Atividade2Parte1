@@ -46,6 +46,10 @@ Este projeto tem como objetivo repnder as questões da atividade.
 
 As funções **JSON.stringify()** e **JSON.parse()** são opostas complementares — uma converte objetos em texto JSON, e a outra faz o caminho inverso, transformando esse texto novamente em um objeto JavaScript.
 
+| **Função** | **O que faz** | **Entrada** | **Saída** |
+|--------|-----------|---------|-------|
+| JSON.stringify() | Converte um objeto JavaScript em uma string JSON | Objeto | String JSON | 
+
 
 
 
